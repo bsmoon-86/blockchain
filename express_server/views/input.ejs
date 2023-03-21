@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- form 태그를 이용하여 유저가 입력한 정보를 서버에게 보내준다 -->
+    <!-- 유저가 입력한 데이터를 localhost:3000/login 주소로 데이터보내는 형식은 get으로 보낸다 -->
+    <form action="/login" method="get">
+        <!-- ID를 입력하는 공간 -->
+        <input type="text" name="_id"><br>
+        <!-- PASSWORD를 입력하는 공간 -->
+        <input type="password" name="_pass"><br>
+        <!-- 제출 버튼 생성 -->
+        <input type="submit">
+    </form>
+</body>
+</html>
