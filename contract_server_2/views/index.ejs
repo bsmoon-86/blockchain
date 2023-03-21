@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 함수 생성
+        // signup() 함수를 호출 했을 때 /signup 으로 이동
+        function signup(){
+            // /signup로 이동
+            location.href = '/signup'
+        }
+    </script>
+</head>
+<body>
+    <h1>
+        Login Page
+    </h1>
+    <!-- /login 이라는 주소로 데이터를 보내준다
+        /login이라는 주소를 index.js에 생성 -->
+    <form action="/login" method="post">
+        <input type="text" name="_id"><br>
+        <input type="password" name="_pass"><br>
+        <input type="submit" values="로그인">
+    </form>
+    <!-- onclick 속성은 버틀을 클릭했을 때 할 행동을 지정 -->
+    <button onclick="signup()">회원 가입</button>
+</body>
+</html>

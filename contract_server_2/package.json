@@ -1,0 +1,18 @@
+{
+  "name": "contract_server_2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@truffle/hdwallet-provider" : "klaytn/truffle-hdwallet-provider-klaytn#v5.1.63-klaytn",
+    "caver-js": "^1.10.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "web3": "^1.9.0"
+  }
+}
