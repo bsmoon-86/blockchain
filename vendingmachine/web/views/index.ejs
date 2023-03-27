@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>빵집</title>
+</head>
+<body>
+    <!-- 서버에서 index파일을 보내줄때 {data : 빵의 재고}를 같이 보내준다. -->
+    <!-- 상단의 메뉴 부분 -->
+    <nav>
+        <!-- localhost:3000/ 으로 이동하는 하이퍼링크 -->
+        <a href = "/">HOME</a>
+    </nav>
+    <h1>현재 소유하고 있는 빵의 개수는 : (<%=data%>) 입니다.</h1>
+
+    <!-- 생산된 빵을 재고에 추가하기 위한 부분 -->
+    <!-- 첫번째 form 태그에서는 localhost:3000/input 이라는 주소로 POST의 형식으로 데이터를 보내준다
+    보내주는 데이터의 형태는 json의 형태 -> {input의 name값 : input에 유저가 입력하는 데이터} -> 
+    {'bread' : 유저가 입력한 값}을 서버에게 보내준다. -->
+    <form action="/input" method="POST">
+        <label>생산한 빵의 개수 : </label>
+        <input type="text" name="bread">
+        <input type="submit" value="입고">
+    </form>
+
+    <!-- 빵을 판매하는 부분 -->
+    <!-- 두번째 form 태그에서는 localhost:3000/sell 이라는 주소로 GET의 형식으로 데이터를 보내준다
+    보내는 데이터의 형태는 POST 형태와 같은 json의 형태로 보내준다. -->
+    <form action="/sell" method="GET">
+        <label>구매하려는 빵의 개수 : </label>
+        <input type="text" name = 'bread'>
+        <input type="submit" value = '구입'>
+    </form>
+</body>
+</html>
