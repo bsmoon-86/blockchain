@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>오너가 유저에게 보내는 경우</h1>
+    <!-- 토큰을 거래하는 입력창 -->
+    <!-- 유저가 입력한 값들을 POST 형식으로 localhost:3000/token_trans라는 주소로 보내준다 -->
+    <!-- 서버에게 보내는 데이터의 형태는 
+        {
+            amount : 유저가 입력한 토큰의 양, 
+            address : 유저가 입력한 지갑의 주소
+    } -->
+    <form action="/token_trans", method="POST">
+        <label>보낼 토큰의 양 : </label>
+        <input type="text" name="amount"><br>
+        <label>보낼 지갑 주소 : </label>
+        <input tyep="text" name="address"><br>
+        <input type="submit" value="보내기">
+    </form>
+
+    <h1>오너에게 보내는 경우</h1>
+    <!-- 유저가 토큰 생성자에게 토큰을 보내는 입력창 -->
+    <!-- localhost:3000/trans_owner POST형식으로 데이터를 보낸다 -->
+    <form action="/trans_owner" method="POST">
+        <label>보낼 토큰의 양 : </label>
+        <input type="text" name="amount"><br>
+        <label>지불할 지갑 주소 : </label>
+        <input type = 'text' name = "address"><br>
+        <input type="submit" value="지불">
+    </form>
+</body>
+</html>
