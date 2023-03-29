@@ -18,14 +18,27 @@ app.use(express.urlencoded({extended:false}))
 // json파일 로드 
 const product_contract = require("./build/contracts/Survey.json")
 
+
+
+// private Key와 같은 중요한 값들을 숨겨놓는 작업
+// dotenv 모듈 로드
+// dotenv는 npm install dotenv을 이용하여 설치
+// 같은 경로에 .env 파일에 있는 변수 값들을 로드 할 수 있다. 
+require('dotenv').config()
+
+// .env 파일에 있는 변수는 
+// process.env.변수명으로 로드 가능
+// 파일을 공유하거나 하는 경우 .env파일만 공유하지 않는다면 중요한 데이터를 공유가 되지 않는다. 
+console.log(process.env.private_key)
+
 // smartcontract을 불러오는 작업
-const web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'))
+const web3 = new Web3(new Web3.providers.HttpProvider(process.env.host))
 const smartcontract = new web3.eth.Contract(
     product_contract.abi, 
     product_contract.networks["5777"]['address']
 )
 
-// private Key와 같은 중요한 값들을 숨겨놓는 작업
+
 
 // localhost:3000/ 요청 시
 app.get("/", (req, res)=>{
