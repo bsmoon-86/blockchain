@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>설문자의 정보를 입력하시오</h1>
+    <!-- 유저가 데이터를 입력하는 태그 -->
+    <form action="/user_info" method="POST">
+        <label>이름 : </label>
+        <input type="text" name="user_name"><br>
+        <!-- 휴대폰 번호는 0부터 시작하는 숫자의 형태
+        번호를 숫자의 형태로 받게 되면 앞에 있는 0이라는 숫자가 사라진다. 
+        그래서 휴대폰 번호나 생년월일 숫자의 형태가 아닌 문자의 형태로 데이터를 받는다. -->
+        <label>휴대폰 번호 : </label>
+        <input type="text" name="user_phone"><br>
+        <input type="submit" value = '설문으로 넘어가기'>
+    </form>
+    <a href="/survey_list">설문 내역 보기</a>
+</body>
+</html>
