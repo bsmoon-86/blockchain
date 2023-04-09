@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 토큰의 정보를 입력하는 form창 생성 -->
+    <form action="/create_token" method="post">
+        <div>
+            <label>토큰 이름</label>
+            <input type='text' name="token_name">
+        </div>
+        <div>
+            <label>토큰 심볼</label>
+            <input type='text' name="token_symbol">
+        </div>
+        <div>
+            <label>토큰 decimal</label>
+            <input type='text' name="token_decimal">
+        </div>
+        <div>
+            <label>토큰 발행량</label>
+            <input type='text' name="token_amount">
+        </div>
+        <input type="submit" value="토큰 발행">
+    </form>
+</body>
+</html>
