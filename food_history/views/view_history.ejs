@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        <%= data[0]%> 내역 확인
+    </h1>
+    <p>식품의 타입은 <%=data[1]%> 입니다. </p>
+    <table border="1">
+        <tr>
+            <th>인덱스</th>
+            <th>내역 추가자의 지갑 주소</th>
+        </tr>
+        <% for (var i = 0; i < data[2].length; i ++) {%>
+            <tr>
+                <td>
+                    <%=i+1%>
+                </td>
+                <td>
+                    <%=data[2][i]%>
+                </td>
+            </tr>
+        <%}%>
+    </table>
+</body>
+</html>
