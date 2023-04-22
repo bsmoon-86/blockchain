@@ -5,7 +5,7 @@ contract used_deal {
     struct deal_info{
         string title;
         string content;
-        uint16 price;
+        uint price;
         address writer;
         address trader;
         uint8 state;
@@ -16,7 +16,7 @@ contract used_deal {
     uint deal_num = 1;
     
 
-    function add_deal(uint _num, string memory _title, string memory _content, uint16 _price, uint8 _state) public{
+    function add_deal(uint _num, string memory _title, string memory _content, uint _price, uint8 _state) public{
         require(deals[_num].state == 0, "deal exist");
         deals[_num].title = _title;
         deals[_num].content = _content;
@@ -34,7 +34,6 @@ contract used_deal {
     }
 
     function change_trade(uint _num, uint8 _state) public {
-        require(deals[_num].writer != address(0), "deal not exist");
         require(deals[_num].writer == msg.sender, "writer not match");
         deals[_num].state = _state;
         if (_state == 1){
@@ -46,7 +45,7 @@ contract used_deal {
         return (deal_num);
     }
 
-    function view_deal(uint _num) public view returns (string memory, string memory, uint16, address, address, uint8){
+    function view_deal(uint _num) public view returns (string memory, string memory, uint, address, address, uint8){
         return (deals[_num].title, deals[_num].content, deals[_num].price, deals[_num].writer, deals[_num].trader, deals[_num].state);
     }
 

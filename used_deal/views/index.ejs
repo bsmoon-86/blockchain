@@ -9,6 +9,9 @@
         function add_deal(){
             location.href = "/add_deal"
         }
+        function view_deal(no){
+            location.href = "/view_deal?no="+no
+        }
     </script>
 </head>
 <body>
@@ -29,11 +32,19 @@
             </tr>
         <%}else{%>
             <%for(var i = 0; i < deals_list.length; i++){%>
-                <tr>
+                <tr onclick="view_deal('<%=i+1%>')">
                     <td><%=i+1%></td>
                     <td><%=deals_list[i][0]%></td>
-                    <td><%=deals_list[i][1]%></td>
-                    <td><%=deals_list[i][5]%></td>
+                    <td><%=deals_list[i][3]%></td>
+                    <td>
+                        <%if(deals_list[i][5] == 1){%>
+                            등록됨
+                        <%}else if(deals_list[i][5] == 2){%>
+                            거래중
+                        <%}else{%>
+                            거래 완료
+                        <%}%>
+                    </td>
                 </tr>
             <%}%>
         <%}%>

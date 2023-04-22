@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function trading(no, state){
+            location.href='/change_deal?no='+no+'&state='+state
+        }
+
+        function main(){
+            location.href="/"
+        }
+    </script>
+</head>
+<body>
+    <h1>
+        물품 상세 내역
+    </h1>
+
+    <table>
+        <tr>
+            <th>제목</th>
+            <td><%=data[0]%></td>
+        </tr>
+        <tr>
+            <th>작성자</th>
+            <td><%=data[3]%></td>
+        </tr>
+        <tr>
+            <th>가격</th>
+            <td><%=data[2]%></td>
+        </tr>
+        <tr>
+            <th>
+                거래 상태
+            </th>
+            <td>
+                <%if (data[5] == 1){%>
+                    등록 중
+                <%}else if (data[5] == 2){%>
+                    거래 중
+                <%}else{%>
+                    거래 완료
+                <%}%>
+            </td>
+        </tr>
+        <tr>
+            <th>내용</th>
+            <td>
+                <%=data[1]%>
+            </td>
+        </tr>
+    </table>
+    <%if (data[5] == 1){%>
+        <button onclick="trading('<%=deal_no%>', 2)">거래</button>
+    <%}else if (data[5] == 2){%>
+        <button onclick="trading('<%=deal_no%>', 1)">거래 취소</button>
+        <button onclick="trading('<%=deal_no%>', 9)">거래 완료</button>
+    <%}%>
+    <button onclick="main()">목록</button>
+</body>
+</html>

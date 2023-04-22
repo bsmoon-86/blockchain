@@ -8,5 +8,15 @@
 </head>
 <body>
     <h1>물품 등록</h1>
+
+    <form action="/add_deal" method="post">
+        <label>글 제목</label>
+        <input type="text" name="title"><br>
+        <label>가격</label>
+        <input type="number" name="price"><br>
+        <label>내용</label>
+        <textarea name="content" width="70%" height="300px"></textarea><br>
+        <input type="submit" value="글 쓰기">
+    </form>
 </body>
 </html>
