@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function add_deal(){
+            location.href = "/add_deal"
+        }
+    </script>
+</head>
+<body>
+    <h1>중고 물품 거래 내역</h1>
+    <button onclick="add_deal()">글 쓰기</button>
+    <table border=1>
+        <tr>
+            <th>글번호</th>
+            <th>글 제목</th>
+            <th>작성자</th>
+            <th>거래 상태</th>
+        </tr>
+        <% if(deals_list.length == 0) {%>
+            <tr>
+                <td colspan="4">
+                    등록된 게시물이 없습니다
+                </td>
+            </tr>
+        <%}else{%>
+            <%for(var i = 0; i < deals_list.length; i++){%>
+                <tr>
+                    <td><%=i+1%></td>
+                    <td><%=deals_list[i][0]%></td>
+                    <td><%=deals_list[i][1]%></td>
+                    <td><%=deals_list[i][5]%></td>
+                </tr>
+            <%}%>
+        <%}%>
+    </table>
+</body>
+</html>
