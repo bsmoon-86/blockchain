@@ -93,7 +93,7 @@ app.post("/add_deal", async function(req, res){
 app.get("/view_deal", async function(req, res){
     const deal_no = req.query.no
     console.log(deal_no)
-
+    // 게시물은 글 번호를 이용하여 정보 로드 
     const deal = await smartcontract.methods
     .view_deal(deal_no)
     .call()
@@ -109,6 +109,9 @@ app.get("/change_deal", async function(req, res){
     const state = req.query.state
     console.log(deal_no, state)
 
+    // state가 2로 들어오는 경우는 add_trading 함수를 호출하여 거래 상태를 거래중으로 변경
+    // 1로 들어오는 경우에는 거래 취소로 거래자의 주소를 0으로 변경
+    // 9로 들어오는 경우에는 거래 완료
     if (state==2){
         await smartcontract.methods
         .add_trading(deal_no, state)
